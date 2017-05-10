@@ -1,0 +1,35 @@
+
+  version: "2"
+  services:
+    mysql:
+      container_name: omeka_fast_mysql
+      image: mysql:5.7
+      environment:
+        - MYSQL_RANDOM_ROOT_PASSWORD=yes
+        - MYSQL_DATABASE=omeka_s
+        - MYSQL_USER=omeka_s
+        - MYSQL_PASSWORD=Password123
+      ports:
+        - "3334:3306"
+      volumes:
+        - ./mysql:/var/lib/mysql
+
+    php:
+      container_name: omeka_fast_web
+      # image: digirati/omeka-s:7.0.18-fpm
+      environment:
+        - OMEKA__DATABASE_HOST=omeka_fast_mysql
+        - OMEKA__DATABASE_NAME=omeka_s
+        - OMEKA__DATABASE_USER=omeka_s
+        - OMEKA__DATABASE_PASSWORD=Password123
+        - OMEKA__DATABASE_PORT=3306
+      depends_on:
+        - mysql
+      links:
+        - mysql
+      build:
+        context: .
+      volumes:
+        - ./modules:/var/www/html/modules
+      ports:
+        - "7674:80"
