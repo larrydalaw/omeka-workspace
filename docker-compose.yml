@@ -31,5 +31,6 @@
         context: .
       volumes:
         - ./modules:/var/www/html/modules
+        - ./themes:/var/www/html/themes
       ports:
-        - "7674:80"
+        - "8888:80"
