@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+GITHUB_USERNAME="stephenwf"
+GITHUB_TOKEN="KEY_GOES_HERE"
+
 # Requirements:
 command -v curl >/dev/null 2>&1 || { echo -e "\033[0;31mCURL is required for this script to run.\033[m" >&2; exit 1; }
 command -v git >/dev/null 2>&1 || { echo -e "\033[0;31mGit is required for this script to run.\033[m" >&2; exit 1; }
@@ -16,8 +19,6 @@ OMEKA_MODULE="${1}"
 T=(${OMEKA_MODULE//\// })
 OMEKA_MODULE_USER=${T[0]}
 OMEKA_FOLDER_NAME="${2}"
-GITHUB_USERNAME="stephenwf"
-GITHUB_TOKEN="KEY_GOES_HERE"
 
 if [[ ${OMEKA_MODULE} == *"/"* ]]; then
   echo -e "\033[0;34mWe've detected you're wanting to install a Github repo...\033[m"
