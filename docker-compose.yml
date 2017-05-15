@@ -32,5 +32,6 @@
       volumes:
         - ./modules:/var/www/html/modules
         - ./themes:/var/www/html/themes
+        - ./config/error.phtml:/var/www/html/application/view/error/index.phtml
       ports:
         - "8888:80"
