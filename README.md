@@ -5,7 +5,7 @@ This will allow omeka to be run locally.
 - Clone repository
 - `git clone git@github.com:stephenwf/omeka-workspace.git`
 - Copy existing mysql folder e.g.
-- `cp ../Omeka-S-Docker/docker/runtime/mysql/* ./mysql`
+- `cp -rp ../Omeka-S-Docker/docker/runtime/mysql/* ./mysql`
 
 ### Running
 ```bash
