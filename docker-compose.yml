@@ -31,5 +31,7 @@
         context: .
       volumes:
         - ./modules:/var/www/html/modules
+        - ./themes:/var/www/html/themes
+        - ./config/error.phtml:/var/www/html/application/view/error/index.phtml
       ports:
-        - "7674:80"
+        - "8888:80"

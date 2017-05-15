@@ -2,3 +2,5 @@ mysql/*
 !mysql/.gitkeep
 modules/*
 !modules/.gitkeep
+themes/*
+!themes/.gitkeep
