@@ -4,3 +4,4 @@ modules/*
 !modules/.gitkeep
 themes/*
 !themes/.gitkeep
+.idea
