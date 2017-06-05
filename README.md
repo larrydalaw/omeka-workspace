@@ -1,6 +1,57 @@
 # Omeka Workspace
 This will allow omeka to be run locally.
 
+
+
+### Complete working environment including front end install
+
+*This section last updated Monday, 5 June 2017*
+
+* **Requirements** Node, NPM, Yarn & Grunt
+
+```sh
+brew install node
+brew install yarn
+npm install -g grunt
+npm install -g grunt-cli
+```
+
+* **Checkout** all repos you will need
+
+```sh
+git clone git@github.com:digirati-co-uk/omeka-workspace.git
+./omeka-workspace/bin/checkout-everything.sh
+```
+
+* **Start docker** container
+
+```sh
+cd omeka-workspace
+docker-compose up
+```
+
+* **Install Modules** in new terminal window 
+
+```sh
+./bin/install-modules.sh
+```
+
+* **Import database** includes all resource templates required.
+
+```sh
+mysql -u omeka_s -p --host 127.0.0.1 --port 3334 omeka_s < omeka-workspace/database/quickstart-database.sql
+```
+
+* **Install Theme** replace nlw with ida or rs
+
+```sh
+cd nlw-frontend
+yarn
+grunt devomeka
+```
+
+
+
 ### Installing
 - Clone repository
 - `git clone git@github.com:stephenwf/omeka-workspace.git`
@@ -12,7 +63,7 @@ This will allow omeka to be run locally.
 $ docker-compose up
 ```
 
-### Using module loader:
+### Installation of modules Using module loader:
 - Create personal token:
 - https://github.com/settings/tokens
 - Copy username and token into `./bin/omeka-install-module` line 3-4
