@@ -3,7 +3,7 @@ This will allow omeka to be run locally.
 
 
 
-### Complete working environment including front end install
+## Complete working environment including front end install
 
 *This section last updated Monday, 5 June 2017*
 
@@ -62,6 +62,12 @@ grunt devomeka
 ```bash
 $ docker-compose up
 ```
+
+---
+
+
+## Alternative installation method (Advanced)
+
 
 ### Installation of modules Using module loader:
 - Create personal token:
