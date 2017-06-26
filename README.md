@@ -54,7 +54,7 @@ grunt devomeka
 
 ### Installing
 - Clone repository
-- `git clone git@github.com:stephenwf/omeka-workspace.git`
+- `git clone git@github.com:digirati-co-uk/omeka-workspace.git`
 - Copy existing mysql folder e.g.
 - `cp -rp ../Omeka-S-Docker/docker/runtime/mysql/* ./mysql`
 
