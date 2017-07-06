@@ -18,6 +18,7 @@
       container_name: omeka_fast_web
       # image: digirati/omeka-s:7.0.18-fpm
       environment:
+        - PHP_IDE_CONFIG=serverName=omeka-workspace
         - OMEKA__DATABASE_HOST=omeka_fast_mysql
         - OMEKA__DATABASE_NAME=omeka_s
         - OMEKA__DATABASE_USER=omeka_s
@@ -29,6 +30,7 @@
         - mysql
       build:
         context: .
+        dockerfile: Dockerfile
       volumes:
         - ./modules:/var/www/html/modules
         - ./themes:/var/www/html/themes
